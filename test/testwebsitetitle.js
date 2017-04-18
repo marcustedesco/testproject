@@ -3,7 +3,7 @@ var websitetitle = require("../websitetitle");
 describe('websiteTitle', function() {
     describe('#getTitle', function() {
       it('should return LLL if title is not explicitly set', function() {
-         assert.equal("Lauren's Lovely Landscapes", websitetitle.getTitle());
+         assert.equal("Landscapes", websitetitle.getTitle());
       });
     });
     describe('#setTitle', function() {

@@ -28,6 +28,21 @@ app.get('/antarctica', function (req, res) {
 app.get('/australia', function (req, res) {
   res.render('australia',  {title: websiteTitle.getTitle()});
 });
+app.get('/australia2', function (req, res) {
+  res.render('australia2',  {title: websiteTitle.getTitle(websiteTitle.setTitle("australia2"))});
+});
+
+app.route('/events')
+// .all(function(req, res, next) {
+//   // runs for all HTTP verbs first
+//   // think of it as route specific middleware!
+// })
+.get(function(req, res, next) {
+  res.json({ marcus: 1 });
+})
+.post(function (req, res, next) {
+  res.send('POST request to homepage');
+});
 
 // get the app environment from Cloud Foundry
 var appEnv = cfenv.getAppEnv();
